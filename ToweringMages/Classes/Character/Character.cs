@@ -12,6 +12,7 @@ namespace ToweringMages.Classes.Character
     class Character
     {
         Texture2D texture;
+        Rectangle rectangle;
         Vector2 position;
         Vector2 velocity;
         bool hasJumped;
@@ -20,6 +21,7 @@ namespace ToweringMages.Classes.Character
         {
             texture = newTexture;
             position = newPosition;
+            rectangle = texture.Bounds;
             hasJumped = true;
         }
 
@@ -57,7 +59,7 @@ namespace ToweringMages.Classes.Character
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position, null, Color.White, 0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0f);
+            spriteBatch.Draw(texture, position, null, Color.White, 0f, Vector2.Zero, 0.1f, SpriteEffects.None, 0f);
         }
     }
 }
